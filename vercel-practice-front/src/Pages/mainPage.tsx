@@ -9,7 +9,7 @@ const MainPage = () => {
     }
 
     const clickHandle = function(){
-        axios.post("http://localhost:5000/postdata",data)
+        axios.post("https://test-project-back.vercel.app/postdata",data)
         .then((res)=>{
             console.log(res.data)
         })
@@ -19,7 +19,7 @@ const MainPage = () => {
     }
 
     const getDataHandle = function(){
-        axios.get("http://localhost:5000/getdata")
+        axios.get("https://test-project-back.vercel.app/getdata")
         .then((res)=>{
             console.log("Data: ",res.data)
         })
