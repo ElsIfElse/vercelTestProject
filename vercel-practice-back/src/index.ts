@@ -2,15 +2,16 @@ import express, { Request, response, Response } from "express";
 import cors from "cors";
 
 const app = express();
-const port = 3000;
+const port = 5000;
 app.use(express.json())
 
 app.use(cors({ 
-    origin:"https://front-test-project.vercel.app/"
+    origin:"http://localhost:5173"
 }))
 
 app.get("/getdata", (req: Request, res: Response) => {
-  res.send({data:{msg:"You are very okay i guess",number:"2"}});
+  const payload = {msg:"You are very okay i guess",number:"2"} 
+  res.send(payload);
 });
 
 app.post("/postdata",async (req:Request,res:Response)=>{
@@ -41,5 +42,5 @@ app.post("/postdata",async (req:Request,res:Response)=>{
 })
 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:5000`);
+  console.log(`Server running on port: ${port}`);
 });
