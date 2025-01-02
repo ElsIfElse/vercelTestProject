@@ -6,7 +6,9 @@ const port = 5000;
 app.use(express.json())
 
 app.use(cors({ 
-    origin:"https://front-test-project.vercel.app/"
+    origin:"https://front-test-project.vercel.app",
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }))
 
 app.get("/getdata", (req: Request, res: Response) => {

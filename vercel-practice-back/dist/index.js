@@ -18,7 +18,9 @@ const app = (0, express_1.default)();
 const port = 5000;
 app.use(express_1.default.json());
 app.use((0, cors_1.default)({
-    origin: "https://front-test-project.vercel.app/"
+    origin: "https://front-test-project.vercel.app",
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.get("/getdata", (req, res) => {
     const payload = { msg: "You are very okay i guess", number: "2" };
