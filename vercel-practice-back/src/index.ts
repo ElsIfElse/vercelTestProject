@@ -2,11 +2,11 @@ import express, { Request, response, Response } from "express";
 import cors from "cors";
 
 const app = express();
-const port = 6969;
+const port = 3000;
 app.use(express.json())
 
-app.use(cors({
-    origin:"http://localhost:5173"
+app.use(cors({ 
+    origin:"https://front-test-project.vercel.app/"
 }))
 
 app.get("/getdata", (req: Request, res: Response) => {
@@ -41,5 +41,5 @@ app.post("/postdata",async (req:Request,res:Response)=>{
 })
 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:6969`);
+  console.log(`Server running at http://localhost:5000`);
 });
